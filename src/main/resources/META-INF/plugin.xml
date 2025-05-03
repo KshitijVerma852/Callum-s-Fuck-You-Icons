@@ -1,0 +1,36 @@
+<idea-plugin require-restart="true">
+    <id>com.callumthomson.fuckyouicons</id>
+    <name>callum's fuck you icons</name>
+    <version>REPLACED_BY_GRADLE</version>
+    <vendor email="fuckyou" url="fuckyou">fuckyou</vendor>
+
+    <description>
+        Callum's fuck you icons.
+    </description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="201.6668.113"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <applicationService serviceImplementation="com.callumthomson.fuckyouicons.SettingsService"/>
+        <applicationConfigurable instance="com.callumthomson.fuckyouicons.SettingsForm"
+                                 id="callumfuckyouicons"
+                                 displayName="Callum's Fuck You Icons"
+                                 parentId="appearance"/>
+    </extensions>
+    <application-components>
+        <component>
+            <implementation-class>com.callumthomson.fuckyouicons.ExtraToolWindowIconsPatcher</implementation-class>
+        </component>
+    </application-components>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+
+</idea-plugin>
